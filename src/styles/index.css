@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "./atoms.css";
 
 @theme {
   --color-brand-100: #dbeafe;

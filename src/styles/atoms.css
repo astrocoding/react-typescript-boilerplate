@@ -1,0 +1,270 @@
+@layer components {
+  .ui-focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+  }
+
+  .ui-field {
+    @apply flex w-full flex-col gap-1.5;
+  }
+
+  .ui-label-row {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .ui-label {
+    @apply inline-flex text-sm font-medium text-slate-100;
+  }
+
+  .ui-helper {
+    @apply text-xs text-slate-400;
+  }
+
+  .ui-error {
+    @apply text-xs text-red-300;
+  }
+
+  .ui-error-chip {
+    @apply inline-flex cursor-help items-center gap-1 rounded-full border border-red-300/35 bg-red-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase text-red-200;
+  }
+
+  .ui-control {
+    @apply w-full rounded-xl border border-white/15 bg-slate-900/70 px-3 py-2 text-sm text-slate-100 transition duration-200 placeholder:text-slate-400 hover:border-white/25 disabled:cursor-not-allowed disabled:opacity-60 read-only:opacity-80;
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+  }
+
+  .ui-control-error {
+    @apply border-red-400/70 hover:border-red-400 focus-visible:ring-red-300/60;
+  }
+
+  .ui-choice {
+    @apply flex flex-col gap-1.5;
+  }
+
+  .ui-choice-row {
+    @apply inline-flex items-center gap-2;
+  }
+
+  .ui-check-input {
+    @apply h-4 w-4 border border-white/30 bg-slate-900 text-brand-400 transition outline-none accent-brand-400;
+  }
+
+  .ui-radio-input {
+    @apply rounded-[2px];
+  }
+
+  .ui-separator {
+    @apply bg-white/15;
+  }
+
+  .ui-separator-horizontal {
+    @apply h-px w-full;
+  }
+
+  .ui-separator-vertical {
+    @apply h-full min-h-6 w-px;
+  }
+
+  .ui-btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-md font-semibold transition duration-200;
+    @apply disabled:cursor-not-allowed disabled:opacity-60;
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+  }
+
+  .ui-btn-sm {
+    @apply px-3 py-1.5 text-xs;
+  }
+
+  .ui-btn-md {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .ui-btn-lg {
+    @apply px-5 py-2.5 text-base;
+  }
+
+  .ui-btn-primary {
+    background-color: #219ae8;
+    color: #fff;
+  }
+
+  .ui-btn-primary:hover {
+    background-color: #1e8dd4;
+  }
+
+  .ui-btn-ghost {
+    @apply border border-white/20 bg-transparent text-slate-100 hover:border-white/35 hover:bg-white/5;
+  }
+
+  .ui-btn-danger {
+    @apply bg-red-500 text-white hover:bg-red-400;
+  }
+
+  .ui-btn-warning {
+    @apply bg-amber-500 text-slate-950 hover:bg-amber-400;
+  }
+
+  .ui-btn-info {
+    @apply bg-sky-500 text-white hover:bg-sky-400;
+  }
+
+  .ui-btn-outline-primary {
+    @apply border border-[#219ae8]/60 bg-transparent text-[#7fcef8] hover:bg-[#219ae8]/12;
+  }
+
+  .ui-btn-outline-ghost {
+    @apply border border-white/35 bg-transparent text-slate-100 hover:bg-white/6;
+  }
+
+  .ui-btn-outline-danger {
+    @apply border border-red-400/55 bg-transparent text-red-300 hover:bg-red-500/10;
+  }
+
+  .ui-btn-outline-warning {
+    @apply border border-amber-400/55 bg-transparent text-amber-300 hover:bg-amber-500/12;
+  }
+
+  .ui-btn-outline-info {
+    @apply border border-sky-400/55 bg-transparent text-sky-300 hover:bg-sky-500/10;
+  }
+
+  .ui-badge {
+    @apply inline-flex items-center gap-1 rounded-lg border px-2 py-0.5 text-xs font-medium;
+  }
+
+  .ui-badge-success {
+    @apply border-emerald-400/30 bg-emerald-500/15 text-emerald-200;
+  }
+
+  .ui-badge-warning {
+    @apply border-amber-300/30 bg-amber-400/15 text-amber-200;
+  }
+
+  .ui-badge-error {
+    @apply border-red-300/30 bg-red-500/15 text-red-200;
+  }
+
+  .ui-badge-info {
+    @apply border-sky-300/30 bg-sky-500/15 text-sky-200;
+  }
+
+  .ui-tooltip {
+    @apply relative inline-flex;
+  }
+
+  .ui-tooltip-field-anchor {
+    display: block;
+    width: 100%;
+  }
+
+  .ui-tooltip-field-anchor > .ui-tooltip-trigger {
+    display: block;
+    width: 100%;
+  }
+
+  .ui-tooltip-field-anchor > .ui-tooltip-trigger > .ui-control {
+    width: 100%;
+  }
+
+  .ui-tooltip-trigger {
+    @apply inline-flex;
+  }
+
+  .ui-tooltip-content {
+    @apply pointer-events-none invisible absolute z-30 inline-flex w-max max-w-none items-center whitespace-nowrap rounded-md border border-white/10 bg-slate-950 px-2.5 py-1.5 text-xs text-slate-100 opacity-0 shadow-xl transition duration-150;
+  }
+
+  .ui-tooltip-trigger-hover:hover .ui-tooltip-content {
+    @apply visible opacity-100;
+  }
+
+  .ui-tooltip-trigger-focus:focus-within .ui-tooltip-content {
+    @apply visible opacity-100;
+  }
+
+  .ui-tooltip-trigger-hover-focus:hover .ui-tooltip-content,
+  .ui-tooltip-trigger-hover-focus:focus-within .ui-tooltip-content,
+  .ui-tooltip-open .ui-tooltip-content {
+    @apply visible opacity-100;
+  }
+
+  .ui-tooltip-top {
+    @apply bottom-[calc(100%+0.5rem)] left-1/2 -translate-x-1/2;
+  }
+
+  .ui-tooltip-top-start {
+    left: 0;
+    transform: translateX(0);
+  }
+
+  .ui-tooltip-over-label {
+    top: 50%;
+    right: auto;
+    bottom: auto;
+    left: 0;
+    transform: translateY(-50%);
+  }
+
+  .ui-tooltip-over-input {
+    right: auto;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .ui-tooltip-right {
+    @apply left-[calc(100%+0.5rem)] top-1/2 -translate-y-1/2;
+  }
+
+  .ui-tooltip-bottom {
+    @apply left-1/2 top-[calc(100%+0.5rem)] -translate-x-1/2;
+  }
+
+  .ui-tooltip-left {
+    @apply right-[calc(100%+0.5rem)] top-1/2 -translate-y-1/2;
+  }
+
+  .ui-skeleton {
+    @apply relative overflow-hidden bg-slate-800/80;
+  }
+
+  .ui-skeleton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    transform: translateX(-100%);
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.2) 45%,
+      transparent 100%
+    );
+    animation: ui-skeleton-shimmer 1.4s infinite;
+  }
+
+  .ui-skeleton-static::after {
+    animation: none;
+    background: transparent;
+  }
+
+  .ui-switch {
+    @apply relative inline-flex h-6 w-11 items-center rounded-full border transition duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+
+  .ui-switch-on {
+    @apply border-brand-300/30 bg-brand-500/80;
+  }
+
+  .ui-switch-off {
+    @apply border-white/20 bg-slate-800;
+  }
+
+  .ui-switch-thumb {
+    @apply h-4 w-4 rounded-full bg-white shadow transition duration-200;
+  }
+}
+
+@keyframes ui-skeleton-shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
