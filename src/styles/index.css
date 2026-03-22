@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "./base/theme.css";
+@import "./atoms.css";
 
 @theme {
   --color-brand-100: #dbeafe;
@@ -16,29 +18,8 @@
     box-sizing: border-box;
   }
 
-  html,
-  body,
-  #root {
-    min-height: 100%;
-  }
-
   body {
-    margin: 0;
     font-family: var(--font-sans);
-    color: rgb(226 232 240);
-    background-color: rgb(2 6 23);
-    background-image:
-      radial-gradient(circle at 20% 10%, rgb(59 130 246 / 0.2), transparent 40%),
-      radial-gradient(
-        circle at 80% 0%,
-        rgb(14 165 233 / 0.18),
-        transparent 36%
-      ),
-      linear-gradient(180deg, rgb(15 23 42), rgb(2 6 23));
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
   }
 
   a {
