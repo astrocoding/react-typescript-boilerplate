@@ -1,0 +1,290 @@
+@layer base {
+  :root {
+    --ui-theme-transition: 220ms cubic-bezier(0.22, 1, 0.36, 1);
+    --ui-focus-ring: rgb(59 130 246 / 0.45);
+    --ui-focus-ring-danger: rgb(248 113 113 / 0.45);
+    --ui-brand-500: #219ae8;
+    --ui-brand-500-hover: #1e8dd4;
+  }
+
+  html[data-theme='dark'] {
+    --ui-bg-canvas: #020617;
+    --ui-bg-image:
+      radial-gradient(circle at 20% 10%, rgb(59 130 246 / 0.2), transparent 40%),
+      radial-gradient(circle at 80% 0%, rgb(14 165 233 / 0.18), transparent 36%),
+      linear-gradient(180deg, #0f172a, #020617);
+
+    --ui-surface-card: rgb(15 23 42 / 0.74);
+    --ui-surface-hero: rgb(15 23 42 / 0.84);
+    --ui-surface-subtle: rgb(15 23 42 / 0.56);
+    --ui-surface-control: rgb(15 23 42 / 0.78);
+    --ui-surface-elevated: #020617;
+
+    --ui-border-subtle: rgb(148 163 184 / 0.24);
+    --ui-border-strong: rgb(148 163 184 / 0.38);
+    --ui-border-accent-soft: rgb(147 197 253 / 0.24);
+    --ui-separator: rgb(148 163 184 / 0.25);
+
+    --ui-text-primary: #e2e8f0;
+    --ui-text-muted: #94a3b8;
+    --ui-text-inverse: #f8fafc;
+    --ui-text-brand: #7dd3fc;
+    --ui-text-success: #6ee7b7;
+    --ui-text-warning: #fcd34d;
+    --ui-text-danger: #fda4af;
+    --ui-text-info: #7dd3fc;
+
+    --ui-control-border: rgb(148 163 184 / 0.34);
+    --ui-control-border-hover: rgb(148 163 184 / 0.52);
+    --ui-control-bg: rgb(15 23 42 / 0.78);
+    --ui-control-text: #e2e8f0;
+    --ui-control-placeholder: #94a3b8;
+
+    --ui-focus-offset: rgb(2 6 23 / 0.92);
+
+    --ui-btn-primary-text: #ffffff;
+
+    --ui-btn-ghost-bg: transparent;
+    --ui-btn-ghost-text: #e2e8f0;
+    --ui-btn-ghost-border: rgb(226 232 240 / 0.24);
+    --ui-btn-ghost-hover-bg: rgb(255 255 255 / 0.06);
+    --ui-btn-ghost-hover-border: rgb(226 232 240 / 0.42);
+
+    --ui-btn-danger-bg: #ef4444;
+    --ui-btn-danger-hover: #f87171;
+    --ui-btn-danger-text: #ffffff;
+
+    --ui-btn-warning-bg: #f59e0b;
+    --ui-btn-warning-hover: #fbbf24;
+    --ui-btn-warning-text: #1e293b;
+
+    --ui-btn-info-bg: #0ea5e9;
+    --ui-btn-info-hover: #38bdf8;
+    --ui-btn-info-text: #ffffff;
+
+    --ui-btn-outline-primary-border: rgb(33 154 232 / 0.55);
+    --ui-btn-outline-primary-text: #7fcef8;
+    --ui-btn-outline-primary-hover-bg: rgb(33 154 232 / 0.12);
+
+    --ui-btn-outline-ghost-border: rgb(226 232 240 / 0.38);
+    --ui-btn-outline-ghost-text: #e2e8f0;
+    --ui-btn-outline-ghost-hover-bg: rgb(255 255 255 / 0.07);
+
+    --ui-btn-outline-danger-border: rgb(248 113 113 / 0.5);
+    --ui-btn-outline-danger-text: #fda4af;
+    --ui-btn-outline-danger-hover-bg: rgb(239 68 68 / 0.1);
+
+    --ui-btn-outline-warning-border: rgb(251 191 36 / 0.5);
+    --ui-btn-outline-warning-text: #fcd34d;
+    --ui-btn-outline-warning-hover-bg: rgb(245 158 11 / 0.12);
+
+    --ui-btn-outline-info-border: rgb(56 189 248 / 0.5);
+    --ui-btn-outline-info-text: #7dd3fc;
+    --ui-btn-outline-info-hover-bg: rgb(14 165 233 / 0.12);
+
+    --ui-badge-success-bg: rgb(16 185 129 / 0.16);
+    --ui-badge-success-border: rgb(52 211 153 / 0.34);
+    --ui-badge-success-text: #a7f3d0;
+
+    --ui-badge-warning-bg: rgb(245 158 11 / 0.16);
+    --ui-badge-warning-border: rgb(251 191 36 / 0.34);
+    --ui-badge-warning-text: #fde68a;
+
+    --ui-badge-error-bg: rgb(239 68 68 / 0.16);
+    --ui-badge-error-border: rgb(248 113 113 / 0.34);
+    --ui-badge-error-text: #fecdd3;
+
+    --ui-badge-info-bg: rgb(14 165 233 / 0.16);
+    --ui-badge-info-border: rgb(56 189 248 / 0.34);
+    --ui-badge-info-text: #bae6fd;
+
+    --ui-tooltip-bg: #020617;
+    --ui-tooltip-border: rgb(148 163 184 / 0.34);
+    --ui-tooltip-text: #e2e8f0;
+
+    --ui-tooltip-danger-bg: #ef4444;
+    --ui-tooltip-danger-border: #ef4444;
+    --ui-tooltip-danger-text: #ffffff;
+
+    --ui-switch-on-bg: rgb(59 130 246 / 0.82);
+    --ui-switch-on-border: rgb(147 197 253 / 0.42);
+    --ui-switch-off-bg: #1e293b;
+    --ui-switch-off-border: rgb(148 163 184 / 0.36);
+    --ui-switch-thumb-bg: #ffffff;
+
+    --ui-skeleton-bg: rgb(30 41 59 / 0.76);
+    --ui-skeleton-shimmer: rgb(255 255 255 / 0.2);
+
+    --ui-shadow-card: 0 10px 24px rgb(2 6 23 / 0.24);
+    --ui-shadow-hero: 0 16px 32px rgb(2 6 23 / 0.28);
+  }
+
+  html[data-theme='light'] {
+    --ui-bg-canvas: #f1f5f9;
+    --ui-bg-image:
+      radial-gradient(circle at 18% 8%, rgb(56 189 248 / 0.2), transparent 38%),
+      radial-gradient(circle at 82% 0%, rgb(99 102 241 / 0.12), transparent 34%),
+      linear-gradient(180deg, #f8fbff, #eef2ff);
+
+    --ui-surface-card: rgb(255 255 255 / 0.9);
+    --ui-surface-hero: rgb(255 255 255 / 0.95);
+    --ui-surface-subtle: rgb(255 255 255 / 0.74);
+    --ui-surface-control: rgb(255 255 255 / 0.96);
+    --ui-surface-elevated: #ffffff;
+
+    --ui-border-subtle: rgb(15 23 42 / 0.12);
+    --ui-border-strong: rgb(15 23 42 / 0.22);
+    --ui-border-accent-soft: rgb(59 130 246 / 0.25);
+    --ui-separator: rgb(15 23 42 / 0.15);
+
+    --ui-text-primary: #0f172a;
+    --ui-text-muted: #475569;
+    --ui-text-inverse: #0f172a;
+    --ui-text-brand: #0369a1;
+    --ui-text-success: #047857;
+    --ui-text-warning: #92400e;
+    --ui-text-danger: #b91c1c;
+    --ui-text-info: #0c4a6e;
+
+    --ui-control-border: rgb(100 116 139 / 0.42);
+    --ui-control-border-hover: rgb(71 85 105 / 0.6);
+    --ui-control-bg: rgb(255 255 255 / 0.96);
+    --ui-control-text: #0f172a;
+    --ui-control-placeholder: #64748b;
+
+    --ui-focus-offset: rgb(255 255 255 / 0.95);
+
+    --ui-btn-primary-text: #ffffff;
+
+    --ui-btn-ghost-bg: transparent;
+    --ui-btn-ghost-text: #0f172a;
+    --ui-btn-ghost-border: rgb(15 23 42 / 0.2);
+    --ui-btn-ghost-hover-bg: rgb(15 23 42 / 0.06);
+    --ui-btn-ghost-hover-border: rgb(15 23 42 / 0.36);
+
+    --ui-btn-danger-bg: #dc2626;
+    --ui-btn-danger-hover: #ef4444;
+    --ui-btn-danger-text: #ffffff;
+
+    --ui-btn-warning-bg: #d97706;
+    --ui-btn-warning-hover: #f59e0b;
+    --ui-btn-warning-text: #ffffff;
+
+    --ui-btn-info-bg: #0284c7;
+    --ui-btn-info-hover: #0ea5e9;
+    --ui-btn-info-text: #ffffff;
+
+    --ui-btn-outline-primary-border: rgb(2 132 199 / 0.5);
+    --ui-btn-outline-primary-text: #0369a1;
+    --ui-btn-outline-primary-hover-bg: rgb(2 132 199 / 0.1);
+
+    --ui-btn-outline-ghost-border: rgb(15 23 42 / 0.22);
+    --ui-btn-outline-ghost-text: #0f172a;
+    --ui-btn-outline-ghost-hover-bg: rgb(15 23 42 / 0.06);
+
+    --ui-btn-outline-danger-border: rgb(220 38 38 / 0.45);
+    --ui-btn-outline-danger-text: #b91c1c;
+    --ui-btn-outline-danger-hover-bg: rgb(220 38 38 / 0.1);
+
+    --ui-btn-outline-warning-border: rgb(217 119 6 / 0.45);
+    --ui-btn-outline-warning-text: #92400e;
+    --ui-btn-outline-warning-hover-bg: rgb(217 119 6 / 0.1);
+
+    --ui-btn-outline-info-border: rgb(2 132 199 / 0.45);
+    --ui-btn-outline-info-text: #0c4a6e;
+    --ui-btn-outline-info-hover-bg: rgb(2 132 199 / 0.1);
+
+    --ui-badge-success-bg: rgb(16 185 129 / 0.14);
+    --ui-badge-success-border: rgb(16 185 129 / 0.32);
+    --ui-badge-success-text: #047857;
+
+    --ui-badge-warning-bg: rgb(245 158 11 / 0.15);
+    --ui-badge-warning-border: rgb(217 119 6 / 0.34);
+    --ui-badge-warning-text: #92400e;
+
+    --ui-badge-error-bg: rgb(239 68 68 / 0.14);
+    --ui-badge-error-border: rgb(220 38 38 / 0.34);
+    --ui-badge-error-text: #b91c1c;
+
+    --ui-badge-info-bg: rgb(14 165 233 / 0.14);
+    --ui-badge-info-border: rgb(2 132 199 / 0.34);
+    --ui-badge-info-text: #0c4a6e;
+
+    --ui-tooltip-bg: #0f172a;
+    --ui-tooltip-border: #334155;
+    --ui-tooltip-text: #f8fafc;
+
+    --ui-tooltip-danger-bg: #ef4444;
+    --ui-tooltip-danger-border: #ef4444;
+    --ui-tooltip-danger-text: #ffffff;
+
+    --ui-switch-on-bg: rgb(37 99 235 / 0.9);
+    --ui-switch-on-border: rgb(96 165 250 / 0.5);
+    --ui-switch-off-bg: #e2e8f0;
+    --ui-switch-off-border: rgb(148 163 184 / 0.46);
+    --ui-switch-thumb-bg: #ffffff;
+
+    --ui-skeleton-bg: rgb(148 163 184 / 0.34);
+    --ui-skeleton-shimmer: rgb(255 255 255 / 0.86);
+
+    --ui-shadow-card: 0 10px 22px rgb(15 23 42 / 0.08);
+    --ui-shadow-hero: 0 14px 30px rgb(30 41 59 / 0.12);
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    color: var(--ui-text-primary);
+    background-color: var(--ui-bg-canvas);
+    background-image: var(--ui-bg-image);
+    transition:
+      background-color var(--ui-theme-transition),
+      background-image var(--ui-theme-transition),
+      color var(--ui-theme-transition);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .ui-theme-transition {
+    transition:
+      background-color var(--ui-theme-transition),
+      border-color var(--ui-theme-transition),
+      color var(--ui-theme-transition),
+      box-shadow var(--ui-theme-transition);
+  }
+
+  .ui-app-shell {
+    color: var(--ui-text-primary);
+  }
+
+  .ui-surface-card {
+    border: 1px solid var(--ui-border-subtle);
+    background: var(--ui-surface-card);
+    box-shadow: var(--ui-shadow-card);
+  }
+
+  .ui-surface-hero {
+    border: 1px solid var(--ui-border-accent-soft);
+    background: var(--ui-surface-hero);
+    box-shadow: var(--ui-shadow-hero);
+  }
+
+  .ui-theme-preview {
+    border: 1px solid var(--ui-border-subtle);
+    background: var(--ui-surface-subtle);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    body,
+    .ui-theme-transition {
+      transition: none;
+    }
+  }
+}
