@@ -149,15 +149,13 @@ export function Input(props: InputProps) {
 
   return (
     <div className={cn('ui-field', containerClassName)}>
-      {label || isValidation422 ? (
+      {label ? (
         <div className="ui-label-row">
-          {label ? (
-            <label htmlFor={fieldId} className={cn('ui-label', labelClassName)}>
-              <Typography as="span" weight="medium" className="text-sm">
-                {label}
-              </Typography>
-            </label>
-          ) : null}
+          <label htmlFor={fieldId} className={cn('ui-label', labelClassName)}>
+            <Typography as="span" weight="medium" className="text-sm">
+              {label}
+            </Typography>
+          </label>
         </div>
       ) : null}
 
@@ -165,9 +163,10 @@ export function Input(props: InputProps) {
         <Tooltip
           content={validationTooltipContent}
           side={tooltipSide}
+          trigger="manual"
           className="ui-tooltip-field-anchor"
-          open={isControlActive ? true : undefined}
-          contentClassName="ui-tooltip-over-input"
+          open={isControlActive}
+          contentClassName="ui-tooltip-over-input ui-tooltip-danger"
         >
           {controlNode}
         </Tooltip>
