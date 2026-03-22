@@ -1,6 +1,44 @@
 @layer components {
   .ui-focus-ring {
-    @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+    outline: none;
+  }
+
+  .ui-focus-ring:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--ui-focus-ring),
+      0 0 0 4px var(--ui-focus-offset);
+  }
+
+  .ui-text-default {
+    color: var(--ui-text-primary);
+  }
+
+  .ui-text-muted {
+    color: var(--ui-text-muted);
+  }
+
+  .ui-text-primary {
+    color: var(--ui-text-brand);
+  }
+
+  .ui-text-success {
+    color: var(--ui-text-success);
+  }
+
+  .ui-text-warning {
+    color: var(--ui-text-warning);
+  }
+
+  .ui-text-danger {
+    color: var(--ui-text-danger);
+  }
+
+  .ui-text-info {
+    color: var(--ui-text-info);
+  }
+
+  .ui-text-white {
+    color: var(--ui-text-inverse);
   }
 
   .ui-field {
@@ -12,28 +50,62 @@
   }
 
   .ui-label {
-    @apply inline-flex text-sm font-medium text-slate-100;
+    @apply inline-flex text-sm font-medium;
+    color: var(--ui-text-primary);
   }
 
   .ui-helper {
-    @apply text-xs text-slate-400;
+    @apply text-xs;
+    color: var(--ui-text-muted);
   }
 
   .ui-error {
-    @apply text-xs text-red-300;
+    @apply text-xs;
+    color: var(--ui-text-danger);
   }
 
   .ui-error-chip {
-    @apply inline-flex cursor-help items-center gap-1 rounded-full border border-red-300/35 bg-red-500/10 px-2 py-0.5 text-[10px] font-semibold uppercase text-red-200;
+    @apply inline-flex cursor-help items-center gap-1 rounded-full border px-2 py-0.5 text-[10px] font-semibold uppercase;
+    border-color: var(--ui-badge-error-border);
+    background-color: var(--ui-badge-error-bg);
+    color: var(--ui-badge-error-text);
   }
 
   .ui-control {
-    @apply w-full rounded-xl border border-white/15 bg-slate-900/70 px-3 py-2 text-sm text-slate-100 transition duration-200 placeholder:text-slate-400 hover:border-white/25 disabled:cursor-not-allowed disabled:opacity-60 read-only:opacity-80;
-    @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+    @apply w-full rounded-xl border px-3 py-2 text-sm transition duration-200 disabled:cursor-not-allowed disabled:opacity-60 read-only:opacity-80;
+    border-color: var(--ui-control-border);
+    background-color: var(--ui-control-bg);
+    color: var(--ui-control-text);
+    outline: none;
+    transition-property: border-color, background-color, color, box-shadow;
+  }
+
+  .ui-control::placeholder {
+    color: var(--ui-control-placeholder);
+  }
+
+  .ui-control:hover {
+    border-color: var(--ui-control-border-hover);
+  }
+
+  .ui-control:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--ui-focus-ring),
+      0 0 0 4px var(--ui-focus-offset);
   }
 
   .ui-control-error {
-    @apply border-red-400/70 hover:border-red-400 focus-visible:ring-red-300/60;
+    border-color: var(--ui-btn-danger-bg);
+  }
+
+  .ui-control-error:hover {
+    border-color: var(--ui-btn-danger-hover);
+  }
+
+  .ui-control-error:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--ui-focus-ring-danger),
+      0 0 0 4px var(--ui-focus-offset);
   }
 
   .ui-choice {
@@ -45,7 +117,22 @@
   }
 
   .ui-check-input {
-    @apply h-4 w-4 border border-white/30 bg-slate-900 text-brand-400 transition outline-none accent-brand-400;
+    @apply h-4 w-4 border transition;
+    border-color: var(--ui-control-border);
+    background-color: var(--ui-control-bg);
+    color: var(--ui-brand-500);
+    accent-color: var(--ui-brand-500);
+    outline: none;
+  }
+
+  .ui-check-input:hover {
+    border-color: var(--ui-control-border-hover);
+  }
+
+  .ui-check-input:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--ui-focus-ring),
+      0 0 0 4px var(--ui-focus-offset);
   }
 
   .ui-radio-input {
@@ -53,7 +140,7 @@
   }
 
   .ui-separator {
-    @apply bg-white/15;
+    background-color: var(--ui-separator);
   }
 
   .ui-separator-horizontal {
@@ -67,7 +154,14 @@
   .ui-btn {
     @apply inline-flex select-none items-center justify-center gap-2 rounded-md font-semibold transition duration-200;
     @apply disabled:cursor-not-allowed disabled:opacity-60;
-    @apply outline-none focus-visible:ring-2 focus-visible:ring-brand-300/70 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900;
+    outline: none;
+    transition-property: background-color, border-color, color, box-shadow;
+  }
+
+  .ui-btn:focus-visible {
+    box-shadow:
+      0 0 0 2px var(--ui-focus-ring),
+      0 0 0 4px var(--ui-focus-offset);
   }
 
   .ui-btn-sm {
@@ -83,48 +177,100 @@
   }
 
   .ui-btn-primary {
-    background-color: #219ae8;
-    color: #fff;
+    background-color: var(--ui-brand-500);
+    color: var(--ui-btn-primary-text);
   }
 
   .ui-btn-primary:hover {
-    background-color: #1e8dd4;
+    background-color: var(--ui-brand-500-hover);
   }
 
   .ui-btn-ghost {
-    @apply border border-white/20 bg-transparent text-slate-100 hover:border-white/35 hover:bg-white/5;
+    border: 1px solid var(--ui-btn-ghost-border);
+    background-color: var(--ui-btn-ghost-bg);
+    color: var(--ui-btn-ghost-text);
+  }
+
+  .ui-btn-ghost:hover {
+    border-color: var(--ui-btn-ghost-hover-border);
+    background-color: var(--ui-btn-ghost-hover-bg);
   }
 
   .ui-btn-danger {
-    @apply bg-red-500 text-white hover:bg-red-400;
+    background-color: var(--ui-btn-danger-bg);
+    color: var(--ui-btn-danger-text);
+  }
+
+  .ui-btn-danger:hover {
+    background-color: var(--ui-btn-danger-hover);
   }
 
   .ui-btn-warning {
-    @apply bg-amber-500 text-slate-950 hover:bg-amber-400;
+    background-color: var(--ui-btn-warning-bg);
+    color: var(--ui-btn-warning-text);
+  }
+
+  .ui-btn-warning:hover {
+    background-color: var(--ui-btn-warning-hover);
   }
 
   .ui-btn-info {
-    @apply bg-sky-500 text-white hover:bg-sky-400;
+    background-color: var(--ui-btn-info-bg);
+    color: var(--ui-btn-info-text);
+  }
+
+  .ui-btn-info:hover {
+    background-color: var(--ui-btn-info-hover);
   }
 
   .ui-btn-outline-primary {
-    @apply border border-[#219ae8]/60 bg-transparent text-[#7fcef8] hover:bg-[#219ae8]/12;
+    border: 1px solid var(--ui-btn-outline-primary-border);
+    background-color: transparent;
+    color: var(--ui-btn-outline-primary-text);
+  }
+
+  .ui-btn-outline-primary:hover {
+    background-color: var(--ui-btn-outline-primary-hover-bg);
   }
 
   .ui-btn-outline-ghost {
-    @apply border border-white/35 bg-transparent text-slate-100 hover:bg-white/6;
+    border: 1px solid var(--ui-btn-outline-ghost-border);
+    background-color: transparent;
+    color: var(--ui-btn-outline-ghost-text);
+  }
+
+  .ui-btn-outline-ghost:hover {
+    background-color: var(--ui-btn-outline-ghost-hover-bg);
   }
 
   .ui-btn-outline-danger {
-    @apply border border-red-400/55 bg-transparent text-red-300 hover:bg-red-500/10;
+    border: 1px solid var(--ui-btn-outline-danger-border);
+    background-color: transparent;
+    color: var(--ui-btn-outline-danger-text);
+  }
+
+  .ui-btn-outline-danger:hover {
+    background-color: var(--ui-btn-outline-danger-hover-bg);
   }
 
   .ui-btn-outline-warning {
-    @apply border border-amber-400/55 bg-transparent text-amber-300 hover:bg-amber-500/12;
+    border: 1px solid var(--ui-btn-outline-warning-border);
+    background-color: transparent;
+    color: var(--ui-btn-outline-warning-text);
+  }
+
+  .ui-btn-outline-warning:hover {
+    background-color: var(--ui-btn-outline-warning-hover-bg);
   }
 
   .ui-btn-outline-info {
-    @apply border border-sky-400/55 bg-transparent text-sky-300 hover:bg-sky-500/10;
+    border: 1px solid var(--ui-btn-outline-info-border);
+    background-color: transparent;
+    color: var(--ui-btn-outline-info-text);
+  }
+
+  .ui-btn-outline-info:hover {
+    background-color: var(--ui-btn-outline-info-hover-bg);
   }
 
   .ui-badge {
@@ -132,19 +278,27 @@
   }
 
   .ui-badge-success {
-    @apply border-emerald-400/30 bg-emerald-500/15 text-emerald-200;
+    border-color: var(--ui-badge-success-border);
+    background-color: var(--ui-badge-success-bg);
+    color: var(--ui-badge-success-text);
   }
 
   .ui-badge-warning {
-    @apply border-amber-300/30 bg-amber-400/15 text-amber-200;
+    border-color: var(--ui-badge-warning-border);
+    background-color: var(--ui-badge-warning-bg);
+    color: var(--ui-badge-warning-text);
   }
 
   .ui-badge-error {
-    @apply border-red-300/30 bg-red-500/15 text-red-200;
+    border-color: var(--ui-badge-error-border);
+    background-color: var(--ui-badge-error-bg);
+    color: var(--ui-badge-error-text);
   }
 
   .ui-badge-info {
-    @apply border-sky-300/30 bg-sky-500/15 text-sky-200;
+    border-color: var(--ui-badge-info-border);
+    background-color: var(--ui-badge-info-bg);
+    color: var(--ui-badge-info-text);
   }
 
   .ui-tooltip {
@@ -170,7 +324,16 @@
   }
 
   .ui-tooltip-content {
-    @apply pointer-events-none invisible absolute z-30 inline-flex w-max max-w-none items-center whitespace-nowrap rounded-md border border-white/10 bg-slate-950 px-2.5 py-1.5 text-xs text-slate-100 opacity-0 shadow-xl transition duration-150;
+    @apply pointer-events-none invisible absolute z-30 inline-flex w-max max-w-none items-center whitespace-nowrap rounded-md border px-2.5 py-1.5 text-xs opacity-0;
+    border-color: var(--ui-tooltip-border);
+    background-color: var(--ui-tooltip-bg);
+    color: var(--ui-tooltip-text);
+    box-shadow: var(--ui-shadow-card);
+    transition:
+      opacity var(--ui-theme-transition),
+      background-color var(--ui-theme-transition),
+      border-color var(--ui-theme-transition),
+      color var(--ui-theme-transition);
   }
 
   .ui-tooltip-trigger-hover:hover .ui-tooltip-content {
@@ -201,7 +364,11 @@
   }
 
   .ui-tooltip-danger {
-    @apply border-red-500 bg-red-500 px-4 py-2 text-sm font-medium text-white shadow-none;
+    border-color: var(--ui-tooltip-danger-border);
+    background-color: var(--ui-tooltip-danger-bg);
+    color: var(--ui-tooltip-danger-text);
+    @apply px-4 py-2 text-sm font-medium;
+    box-shadow: none;
   }
 
   .ui-tooltip-right {
@@ -217,7 +384,8 @@
   }
 
   .ui-skeleton {
-    @apply relative overflow-hidden bg-slate-800/80;
+    @apply relative overflow-hidden;
+    background-color: var(--ui-skeleton-bg);
   }
 
   .ui-skeleton::after {
@@ -228,7 +396,7 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(255, 255, 255, 0.2) 45%,
+      var(--ui-skeleton-shimmer) 45%,
       transparent 100%
     );
     animation: ui-skeleton-shimmer 1.4s infinite;
@@ -241,18 +409,22 @@
 
   .ui-switch {
     @apply relative inline-flex h-6 w-11 items-center rounded-full border transition duration-200 disabled:cursor-not-allowed disabled:opacity-60;
+    transition-property: background-color, border-color, box-shadow;
   }
 
   .ui-switch-on {
-    @apply border-brand-300/30 bg-brand-500/80;
+    border-color: var(--ui-switch-on-border);
+    background-color: var(--ui-switch-on-bg);
   }
 
   .ui-switch-off {
-    @apply border-white/20 bg-slate-800;
+    border-color: var(--ui-switch-off-border);
+    background-color: var(--ui-switch-off-bg);
   }
 
   .ui-switch-thumb {
-    @apply h-4 w-4 rounded-full bg-white shadow transition duration-200;
+    @apply h-4 w-4 rounded-full shadow transition duration-200;
+    background-color: var(--ui-switch-thumb-bg);
   }
 }
 

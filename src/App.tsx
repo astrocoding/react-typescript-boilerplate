@@ -14,6 +14,7 @@ import {
   type BadgeStatus,
   type ButtonVariant,
 } from '@/components/atoms'
+import { useTheme } from '@/contexts/useTheme'
 
 type ShowcaseSectionProps = {
   title: string
@@ -33,7 +34,7 @@ const badgeStatuses: BadgeStatus[] = ['success', 'warning', 'error', 'info']
 
 function ShowcaseSection({ title, description, children }: ShowcaseSectionProps) {
   return (
-    <section className="rounded-2xl border border-white/10 bg-slate-900/70 p-5 sm:p-6">
+    <section className="ui-surface-card ui-theme-transition rounded-2xl p-5 sm:p-6">
       <div className="mb-4 space-y-1">
         <Typography as="h2" weight="bold" color="white" className="text-xl">
           {title}
@@ -48,13 +49,15 @@ function ShowcaseSection({ title, description, children }: ShowcaseSectionProps)
 }
 
 function App() {
+  const { theme, setTheme } = useTheme()
   const [switchOn, setSwitchOn] = useState(true)
   const [selectedRole, setSelectedRole] = useState('frontend')
   const [checkedTerms, setCheckedTerms] = useState(false)
+  const isDarkTheme = theme === 'dark'
 
   return (
-    <main className="mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-5 px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
-      <header className="rounded-2xl border border-brand-300/20 bg-slate-900/80 p-5 sm:p-6">
+    <main className="ui-app-shell mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-5 px-5 py-8 sm:px-8 sm:py-10 lg:px-10 lg:py-12">
+      <header className="ui-surface-hero ui-theme-transition rounded-2xl p-5 sm:p-6">
         <Typography as="h1" weight="bold" color="white">
           Atoms Components Overview
         </Typography>
@@ -62,6 +65,27 @@ function App() {
           Halaman ini menampilkan sample komponen atoms yang reusable dan
           independent, dikelompokkan per kategori supaya cepat dipreview.
         </Typography>
+
+        <div className="ui-theme-preview ui-theme-transition mt-4 flex flex-wrap items-center justify-between gap-3 rounded-xl p-3 sm:p-4">
+          <div className="space-y-1">
+            <Typography as="span" weight="bold" className="text-sm">
+              Preview Global Theme
+            </Typography>
+            <Typography as="p" color="muted" weight="light" className="text-sm">
+              Ubah tema secara dinamis untuk melihat seluruh atoms dalam mode light
+              dan dark. Tema aktif: {theme}.
+            </Typography>
+          </div>
+
+          <Switch
+            checked={isDarkTheme}
+            onCheckedChange={(nextChecked) =>
+              setTheme(nextChecked ? 'dark' : 'light')
+            }
+            label={isDarkTheme ? 'Dark mode' : 'Light mode'}
+            className="shrink-0"
+          />
+        </div>
       </header>
 
       <div className="grid gap-5 lg:grid-cols-2">
@@ -246,9 +270,9 @@ function App() {
                   Hover tooltip
                 </Button>
               </Tooltip>
-              <Icon name="check" className="text-emerald-300" />
-              <Icon name="warning" className="text-amber-300" />
-              <Icon name="close" className="text-red-300" />
+              <Icon name="check" className="ui-text-success" />
+              <Icon name="warning" className="ui-text-warning" />
+              <Icon name="close" className="ui-text-danger" />
             </div>
 
             <Separator />

@@ -34,14 +34,14 @@ const weightClassMap: Record<TypographyWeight, string> = {
 }
 
 const colorClassMap: Record<TypographyColor, string> = {
-  default: 'text-slate-100',
-  muted: 'text-slate-400',
-  primary: 'text-brand-300',
-  success: 'text-emerald-300',
-  warning: 'text-amber-300',
-  danger: 'text-red-300',
-  info: 'text-sky-300',
-  white: 'text-white',
+  default: 'ui-text-default',
+  muted: 'ui-text-muted',
+  primary: 'ui-text-primary',
+  success: 'ui-text-success',
+  warning: 'ui-text-warning',
+  danger: 'ui-text-danger',
+  info: 'ui-text-info',
+  white: 'ui-text-white',
 }
 
 export function Typography({
